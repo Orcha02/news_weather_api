@@ -9,17 +9,19 @@
 	<div class="container">
 		<div class="search">
 			<h2>Search</h2>
-			<input id="city" type="text" name="city">
-			<input type="submit" value="Search">
+			<form action="{{ url_for('submit') }}" method="POST">
+				<input id="city" type="text" name="city">
+				<input type="submit" value="Search">
+			</form>
 		</div>
 		<div class="results">
 			<div class="result">
 				<h2>News</h2>
-				<textarea id="1" name="news-area" cols="50" rows="10"></textarea>
+				<textarea id="1" name="news-area" cols="50" rows="10">{{ news }}</textarea>
 			</div>
 			<div class="result">
 				<h2>Weather</h2>
-				<textarea id="2" name="weather-area" cols="50" rows="10"></textarea>
+				<textarea id="2" name="weather-area" cols="50" rows="10">{{ weather }}</textarea>
 			</div>
 		</div>
 	</div>
