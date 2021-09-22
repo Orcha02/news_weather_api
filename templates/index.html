@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Api for news and wheather</title>
-	<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
-</head>
-<body>
-	<div class="container">
-		<div class="search">
-			<h2>Search</h2>
-			<form action="{{ url_for('submit') }}" method="POST">
-				<input id="city" type="text" name="city">
-				<input type="submit" value="Search">
-			</form>
-		</div>
-		<div class="results">
-			<div class="result">
-				<h2>News</h2>
-				<textarea id="1" name="news-area" cols="50" rows="10">{{ news }}</textarea>
-			</div>
-			<div class="result">
-				<h2>Weather</h2>
-				<textarea id="2" name="weather-area" cols="50" rows="10">{{ weather }}</textarea>
-			</div>
-		</div>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Api for news and wheather</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <h2>Search</h2>
+        <form action="{{ url_for('submit') }}" method="POST">
+          <input id="city" type="text" name="city" />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="results">
+        <div class="newsR">
+          <h2>News</h2>
+          <textarea
+            id="news1"
+            name="news-area"
+            cols="50"
+            rows="10"
+            style="padding: 10px"
+          >
+{{ news }}</textarea
+          >
+          <div class="newsR2"></div>
+          <textarea
+            id="news2"
+            name="news-area"
+            cols="50"
+            rows="10"
+            style="padding: 10px"
+          >
+{{ news }}</textarea
+          >
+        </div>
+        <div class="weatherR">
+          <h2>Weather</h2>
+          <textarea
+            id="weather1"
+            name="weather-area"
+            cols="50"
+            rows="10"
+            style="padding: 10px"
+          >
+{{ weather }}</textarea
+          >
+          <div class="weatherR2"></div>
+          <textarea
+            id="weather1"
+            name="weather-area"
+            cols="50"
+            rows="10"
+            style="padding: 10px"
+          >
+{{ weather }}</textarea
+          >
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
