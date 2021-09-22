@@ -15,8 +15,8 @@ def submit():
     city = '{}'.format(request.form['city'])
     if (city is None or city == ''):
         return render_template('index.html', news='', weather='')
-    news = getNews1(city)
-    weather = getWeather2(city)
+    news = getNews(city)
+    weather = getWeather(city)
     # Proceso
     return render_template('index.html', news=news, weather=weather)
 
