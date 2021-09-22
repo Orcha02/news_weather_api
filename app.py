@@ -21,7 +21,7 @@ def submit():
     return render_template('index.html', news=news, weather=weather)
 
 
-def getNews1(city):
+def getNews(city):
     url = 'https://newsapi.org/v2/everything'
     payload = {'q': city, 'apiKey': '03befe7eb37f49ec98c8181311d51c01'}
     r = requests.get(url, params=payload)
@@ -30,7 +30,7 @@ def getNews1(city):
     Description = ("DESCRIPTION: {}").format(r.json().get('articles')[0].get('description'))
     return Author + '\n' + Title + '\n' + Description
 
-def getWeather2(city):
+def getWeather(city):
     url = 'https://api.openweathermap.org/data/2.5/weather'
     payload = {'q': city, 'appid': '4b576d3c23ad7fba0b5fa4694e6edc1c'}
     r = requests.get(url, params=payload)
